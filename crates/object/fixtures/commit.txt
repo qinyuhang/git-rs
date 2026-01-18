@@ -1,0 +1,6 @@
+tree <tree-sha1>
+parent <parent-sha1>  (可选，可能有多个)
+author <name> <<email>> <timestamp> <timezone>
+committer <name> <<email>> <timestamp> <timezone>
+
+<commit message>
