@@ -5,11 +5,11 @@ pub struct Blob {
 }
 
 impl Blob {
-    fn load<T: std::io::Read>(handle: &mut T) -> Result<Blob> {
+    fn load<T: std::io::Read>(handle: &mut T) -> Result<Self> {
         let mut contents = Vec::new();
         handle.read_to_end(&mut contents)?;
 
-        Ok(Blob { contents })
+        Ok(Self { contents })
     }
 }
 

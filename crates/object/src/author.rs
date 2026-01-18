@@ -1,5 +1,6 @@
 use std::str::FromStr;
 
+#[derive(Debug, PartialEq, Eq, Clone)]
 pub struct Author {
     pub name: String,
     pub email: String,
@@ -8,15 +9,13 @@ pub struct Author {
 }
 pub type Committer = Author;
 
-#[derive(Debug, PartialEq, Eq)]
-pub struct ParseAuthorError;
-
 impl FromStr for Author {
-    type Err = ParseAuthorError;
+    type Err = anyhow::Error;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         let v = s.split(" ").collect::<Vec<&str>>();
-        let timestamp = u64::from_str(v[3]).map_err(|_| ParseAuthorError)?;
+        dbg!(&v);
+        let timestamp = u64::from_str(v[3])?;
         Ok(Self {
             name: v[1].to_string(),
             email: v[2].replace("<", "").replace(">", "").to_string(),
