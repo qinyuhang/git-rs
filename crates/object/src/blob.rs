@@ -1,13 +1,13 @@
+use anyhow::Result;
+
 pub struct Blob {
     pub contents: Vec<u8>,
 }
 
 impl Blob {
-    fn load<T: std::io::Read>(handle: &mut T) -> Result<Blob, String> {
+    fn load<T: std::io::Read>(handle: &mut T) -> Result<Blob> {
         let mut contents = Vec::new();
-        handle
-            .read_to_end(&mut contents)
-            .map_err(|err| format!("faile to read"))?;
+        handle.read_to_end(&mut contents)?;
 
         Ok(Blob { contents })
     }

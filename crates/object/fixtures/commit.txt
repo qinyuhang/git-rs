@@ -1,6 +1,5 @@
-tree <tree-sha1>
-parent <parent-sha1>  (可选，可能有多个)
-author <name> <<email>> <timestamp> <timezone>
-committer <name> <<email>> <timestamp> <timezone>
+tree 21718678af1fac09e7505604a5eeaff934b913be
+author qinyuhang <qinyuhangxiaoxiang@gmail.com> 1768740725 +0800
+committer qinyuhang <qinyuhangxiaoxiang@gmail.com> 1768740725 +0800
 
-<commit message>
+initial commit;
