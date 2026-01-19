@@ -2,6 +2,7 @@ use std::fmt::{Display, Formatter};
 
 use anyhow::Result;
 
+#[derive(Debug, PartialEq, Eq)]
 pub struct Blob {
     pub contents: Vec<u8>,
 }
